@@ -3506,7 +3506,7 @@ h1.page-title + .tag-cloud-list {
   content: '';
 }
 #page-header.full_page {
-  height: 850px;
+  height: 900px;
   background-attachment: fixed;
 }
 #page-header.full_page #site-info {
