@@ -1607,7 +1607,7 @@ a:hover {
 .site-name,
 #aside-content .author-info__name,
 #aside-content .author-info__description {
-  font-family: welcome to eznp's blog;
+  font-family: welcome to Zer0's blog;
 }
 .is-center {
   text-align: center;
@@ -2108,7 +2108,7 @@ figure.highlight pre .javascript .function {
   height: 100%;
   vertical-align: top;
   text-align: center;
-  font-family: welcome to eznp's blog;
+  font-family: welcome to Zer0's blog;
 }
 @media screen and (max-width: 768px) {
   .error404 #error-wrap .error-content .error-info {
