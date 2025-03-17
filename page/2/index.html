@@ -1,193 +1,385 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Zer0 - Zer0</title><meta name="author" content="Zer0"><meta name="copyright" content="Zer0"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Zer0的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zer0">
-<meta property="og:url" content="https://eznp.github.io/page/2/index.html">
-<meta property="og:site_name" content="Zer0">
-<meta property="og:description" content="Zer0的个人博客">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://eznp.github.io/img/6.jpg">
-<meta property="article:author" content="Zer0">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://eznp.github.io/img/6.jpg"><link rel="shortcut icon" href="/img/1.png"><link rel="canonical" href="https://eznp.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/Zer0" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Zer0',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2025-03-12 21:35:49'
-}</script><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zer0</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/tailwind.css">
+  <!-- <link rel="stylesheet" href="/css/search.css"> -->
+<meta name="generator" content="Hexo 7.2.0"></head>
 
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
+<body class="bg-black">
+  <!-- 顶部导航栏 -->
+  <div class="sticky top-0 z-50">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css">
 
-        document.head.appendChild(script)
-      })
+<header class="bg-black text-hacker-white py-4 font-dos font-extrabold">
+    <div class="container mx-auto flex items-center justify-between space-x-8">
     
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
+      <h1 class="text-2xl font-bold ml-[100px] md:ml-0 animate-pulse text-hacker-color1 md:mr-[20%]">
+        <a href="/" class="hover:text-white transition-colors select-none">
+          Zer0
+        </a>
+      </h1>
+  
+    <!-- 大屏幕 -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6">
+          
+            <li>
+              <a href="/" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                Home
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                Archives
+              </a>
+            </li>
+          
+            <li>
+              <a href="/categories" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                Categories
+              </a>
+            </li>
+          
+            <li>
+              <a href="/tags" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                Tags
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                About
+              </a>
+            </li>
+          
+            <li>
+              <a href="/rss.xml" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                RSS
+              </a>
+            </li>
+          
+            <li>
+              <a href="/link" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                Friends
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+  
+      <!-- 小屏幕 -->
+      <button id="menu-toggle" class="block md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  
+    <!-- 折叠菜单 -->
+    <nav id="mobile-menu" class="hidden bg-black">
+      <ul class="space-y-2 py-4 px-6">
+        
+          <li>
+            <a href="/" class="block text-white hover:text-hacker-color1 transition-colors">
+              Home
+            </a>
+          </li>
+        
+          <li>
+            <a href="/archives" class="block text-white hover:text-hacker-color1 transition-colors">
+              Archives
+            </a>
+          </li>
+        
+          <li>
+            <a href="/categories" class="block text-white hover:text-hacker-color1 transition-colors">
+              Categories
+            </a>
+          </li>
+        
+          <li>
+            <a href="/tags" class="block text-white hover:text-hacker-color1 transition-colors">
+              Tags
+            </a>
+          </li>
+        
+          <li>
+            <a href="/about" class="block text-white hover:text-hacker-color1 transition-colors">
+              About
+            </a>
+          </li>
+        
+          <li>
+            <a href="/rss.xml" class="block text-white hover:text-hacker-color1 transition-colors">
+              RSS
+            </a>
+          </li>
+        
+          <li>
+            <a href="/link" class="block text-white hover:text-hacker-color1 transition-colors">
+              Friends
+            </a>
+          </li>
+        
+      </ul>
+    </nav>
+  
+    <!-- RSS Link -->
+    <link rel="alternate" type="application/rss+xml" title=" RSS" href="/rss.xml" />
+  </header>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/search.js"></script>
+  <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
         } else {
-          document.documentElement.classList.remove('hide-aside')
+        mobileMenu.classList.add("hidden");
         }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/6.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('/img/89.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Zer0"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/6.jpg"/><span class="site-name">Zer0</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Zer0</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/eznp" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:2761692103@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2024/06/05/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2020-Roamphp4-Rceme-WP/" title="[极客大挑战 2020]Roamphp4-Rceme WP"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202412291449330.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[极客大挑战 2020]Roamphp4-Rceme WP"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/06/05/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2020-Roamphp4-Rceme-WP/" title="[极客大挑战 2020]Roamphp4-Rceme WP">[极客大挑战 2020]Roamphp4-Rceme WP</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-06-05T10:22:40.000Z" title="发表于 2024-06-05 18:22:40">2024-06-05</time></span></div><div class="content">[极客大挑战 2020]Roamphp4-Rceme
+    });
+    });
+
+  </script>
+  
+
+  </div>
+  
+  <main class="w-screen min-h-screen container mx-auto">
+    <!-- 欢迎页面 -->
+    <div class="min-h-screen bg-black text-center flex flex-col justify-center items-center h-screen">
+        <h1 class="
+        text-hacker-color2 font-dos md:text-huge text-3xl text-wrap animate-bounce select-none bg-red-400 md:min-h-[5rem] md:leading-[5rem] 
+        bg-gradient-to-r from-hacker-color1 to-hacker-color2 bg-clip-text text-transparent md:-mt-80 -mt-40
+        ">Zer0</h1>
+        <hr class="w-[85%] border-t-2 border-line-color border-dashed">
+        
+        <p class="text-hacker-color2 md:mt-40 mt-20 md:text-2xl text-lg text-wrap font-dos w-[70%] select-none">Zer0的个人博客</p>
+
+        <!-- 下拉按钮 -->
+        <svg id="down-btn" class="icon w-16 h-16 absolute top-[75%] hover:-translate-y-1 transition-all cursor-pointer" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#bbbbbb">
+          <path d="M185.884 327.55 146.3 367.133 512.021 732.779 877.7 367.133 838.117 327.55 511.997 653.676Z"></path>
+        </svg>
+    </div>
+
+    <!-- 博客文章与侧边栏 -->
+    <div class="min-h-screen flex gap-8" id="scr-target">
+      <!-- 文章部分 -->
+      <div class="w-full">
+        
+          <div class="post-item group border-b border-b-hacker-color3 ">
+            <a href="/2024/06/05/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2020-Roamphp4-Rceme-WP/" class="block py-2 px-8 group-hover:bg-hacker-hover-color space-y-4">
+              <h2 class="post-title text-hacker-color1 group-hover:text-white font-bold text-2xl">
+                [极客大挑战 2020]Roamphp4-Rceme WP
+              </h2>
+              <p class="post-meta text-hacker-color3 text-sm group-hover:text-white">
+                2024-06-05
+              </p>
+              <p class="post-excerpt text-hacker-color3 group-hover:text-white">
+                [极客大挑战 2020]Roamphp4-Rceme
 进入题目，可以看到，大概意思就是如果code的md5值前5位是3e16b，那么就会执行命令
 这边给出一个md5生成脚本
-12345678import hashlibi = 0while True:    if hashlib.md5(str(i).encode(&#x27;utf-8&#x27;)).hexdigest()[0:5] == &#x27;0e788&#x27;:        print(i)        break    i = i + 1
+import hashlibi = 0while True:    if hashlib.md5(str(i).encode(&amp;#x27;utf-8&amp;#x27;)).hexdigest()[0:5] == &amp;#x27;0e788&amp;#x27;:        print(i)        break    i = i + 1
 
 查看源码，发现提示
 
-1234567891011121314151617181920212223242526272829303132333435363738vim swp，.swp文件是vim使用不当而生成的一个文件，这种文件一般都是“坏的”，查看原来内容需要vim -r要直接用 Vim 打开一个 .swp 文件，你可以采取以下步骤。一般情况下，.swp 文件是二进制文件，直接编辑它并不常见，但你可能会希望查看其内容。1. 打开 .swp 文件你可以用 vim 命令直接打开  ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/6.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zer0</div><div class="author-info__description">Zer0的个人博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/eznp"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/eznp" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:2761692103@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is Zer0's Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/12/Ethernaut-%E5%88%B7%E9%A2%98%E5%B0%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="Ethernaut_刷题小记（一）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202412291439677.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ethernaut_刷题小记（一）"/></a><div class="content"><a class="title" href="/2025/03/12/Ethernaut-%E5%88%B7%E9%A2%98%E5%B0%8F%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="Ethernaut_刷题小记（一）">Ethernaut_刷题小记（一）</a><time datetime="2025-03-12T13:32:49.000Z" title="发表于 2025-03-12 21:32:49">2025-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/02/21/Level-729-%E6%98%93%E7%94%BB%E8%A1%8C-%E5%A4%8D%E7%8E%B0/" title="Level_729_易画行-复现"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202412291449330.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Level_729_易画行-复现"/></a><div class="content"><a class="title" href="/2025/02/21/Level-729-%E6%98%93%E7%94%BB%E8%A1%8C-%E5%A4%8D%E7%8E%B0/" title="Level_729_易画行-复现">Level_729_易画行-复现</a><time datetime="2025-02-21T14:29:13.000Z" title="发表于 2025-02-21 22:29:13">2025-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/02/19/%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E8%BD%A6%E5%8E%A2%E5%A4%8D%E7%8E%B0/" title="不存在的车厢复现"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/06/02/GT4XMuKtPwC7A3m.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="不存在的车厢复现"/></a><div class="content"><a class="title" href="/2025/02/19/%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E8%BD%A6%E5%8E%A2%E5%A4%8D%E7%8E%B0/" title="不存在的车厢复现">不存在的车厢复现</a><time datetime="2025-02-19T12:20:56.000Z" title="发表于 2025-02-19 20:20:56">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/01/20/0psu3%E5%8D%81%E4%B8%80%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BD%9C%E8%B6%8A%E8%89%B0%E5%B7%A8%C2%B7%E8%B6%8A%E7%8B%82%E7%83%AD-single-php%E5%A4%8D%E7%8E%B0/" title="0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202412291451715.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现"/></a><div class="content"><a class="title" href="/2025/01/20/0psu3%E5%8D%81%E4%B8%80%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BD%9C%E8%B6%8A%E8%89%B0%E5%B7%A8%C2%B7%E8%B6%8A%E7%8B%82%E7%83%AD-single-php%E5%A4%8D%E7%8E%B0/" title="0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现">0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现</a><time datetime="2025-01-20T09:05:19.000Z" title="发表于 2025-01-20 17:05:19">2025-01-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/15/ciscn-ccb%E9%83%A8%E5%88%86WP/" title="ciscn-ccb部分WP"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202412291440306.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ciscn-ccb部分WP"/></a><div class="content"><a class="title" href="/2024/12/15/ciscn-ccb%E9%83%A8%E5%88%86WP/" title="ciscn-ccb部分WP">ciscn-ccb部分WP</a><time datetime="2024-12-15T10:25:40.000Z" title="发表于 2024-12-15 18:25:40">2024-12-15</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-session%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-phar%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96-php-pop%E9%93%BE-php%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%80%83%E9%80%B8/" style="font-size: 1.1em; color: #999">-php反序列化 -session反序列化 -phar反序列化 -php pop链 -php字符串逃逸</a> <a href="/tags/RCE/" style="font-size: 1.1em; color: #999">RCE</a> <a href="/tags/web-ciscn-ccb/" style="font-size: 1.1em; color: #999">-web -ciscn&ccb</a> <a href="/tags/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" style="font-size: 1.1em; color: #999">智能合约</a> <a href="/tags/blockchain/" style="font-size: 1.1em; color: #999">blockchain</a> <a href="/tags/xxe/" style="font-size: 1.1em; color: #999">-xxe</a> <a href="/tags/RCE-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="font-size: 1.1em; color: #999">-RCE -反序列化</a> <a href="/tags/NodeJs-pollution/" style="font-size: 1.1em; color: #999">-NodeJs -pollution</a> <a href="/tags/http%E8%B5%B0%E7%A7%81/" style="font-size: 1.1em; color: #999">http走私</a> <a href="/tags/LFI/" style="font-size: 1.1em; color: #999">LFI</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">三月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">二月 2025</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/01/"><span class="card-archive-list-date">一月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">11</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-03-12T13:35:49.128Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Zer0</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
-  init: (str) => {
-    window.typed = new Typed('#subtitle', Object.assign({
-      strings: str,
-      startDelay: 300,
-      typeSpeed: 150,
-      loop: true,
-      backSpeed: 50,
-    }, true))
-  },
-  run: (subtitleType) => {
-    if (true) {
-      if (typeof Typed === 'function') {
-        subtitleType()
-      } else {
-        getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
-      }
-    } else {
-      subtitleType()
-    }
-  }
-}
-</script><script>function subtitleType () {
-  if (true) {
-    typedJSFn.init(["欢迎到来","来都来了，支持一下吧","或许只有更加努力","才能让别人重视你吧"])
-  } else {
-    document.getElementById("subtitle").textContent = "欢迎到来"
-  }
-}
-typedJSFn.run(subtitleType)</script></div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
-POWERMODE.shake = true;
-POWERMODE.mobile = false;
-document.body.addEventListener('input', POWERMODE);
-</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="true" data-text="HELLO,WELCOME,HAHA" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
+vim swp，.swp文件是vim使用不当而生成的一个文件，这种文件一般...
+              </p>
+            </a>
+          </div>
+        
+      </div>
+      
+
+      <!-- 侧边部分 -->
+      
+    <div class="w-1/3 hidden md:block space-y-4 mt-8">
+      
+        
+          <!-- 搜索框 -->
+          <input type="text" id="search-input" placeholder="Search..." class="w-full p-2.5 text-lg mb-5 border-2 border-line-color rounded bg-black text-white placeholder-gray-400"/>
+          <div id="search-results"></div>
+        
+  
+        
+  
+        
+  
+        
+  
+        
+  
+      
+        
+  
+        
+          <!-- 公告栏 -->
+          <div class=" text-white p-4 rounded-md border-2 border-dashed border-line-color mb-4">
+            <h3 class="font-bold text-lg text-hacker-color1">Notice</h3>
+            <p class="mt-4">Suddenly,I turned my head,only to see the person standing in the dim light.</p>
+          </div>
+        
+  
+        
+  
+        
+  
+        
+  
+      
+        
+  
+        
+  
+        
+          <!-- 分类部分 -->
+          <h3 class="text-hacker-color1 font-bold text-lg">Categories</h3>
+          <div>
+            
+            
+          </div>
+          <hr class="w-full border-t-2 border-line-color border-dashed">
+        
+  
+        
+  
+        
+  
+      
+        
+  
+        
+  
+        
+  
+        
+          <!-- 标签部分 -->
+          <h3 class="text-hacker-color1 font-bold text-lg">Tags</h3>
+          <div class="flex flex-wrap justify-start items-center">
+            
+              <a href="https://eznp.github.io/tags/blockchain/" class="text-hacker-color3 hover:bg-hacker-hover-color hover:text-white block border border-hacker-color3 hover:border-dotted rounded-sm py-0.5 px-2 mr-4 mb-2">
+                blockchain <sub>1</sub>
+              </a>
+              <br />
+            
+              <a href="https://eznp.github.io/tags/NodeJs-pollution/" class="text-hacker-color3 hover:bg-hacker-hover-color hover:text-white block border border-hacker-color3 hover:border-dotted rounded-sm py-0.5 px-2 mr-4 mb-2">
+                -NodeJs -pollution <sub>1</sub>
+              </a>
+              <br />
+            
+              <a href="https://eznp.github.io/tags/RCE-反序列化/" class="text-hacker-color3 hover:bg-hacker-hover-color hover:text-white block border border-hacker-color3 hover:border-dotted rounded-sm py-0.5 px-2 mr-4 mb-2">
+                -RCE -反序列化 <sub>1</sub>
+              </a>
+              <br />
+            
+              <a href="https://eznp.github.io/tags/智能合约/" class="text-hacker-color3 hover:bg-hacker-hover-color hover:text-white block border border-hacker-color3 hover:border-dotted rounded-sm py-0.5 px-2 mr-4 mb-2">
+                智能合约 <sub>1</sub>
+              </a>
+              <br />
+            
+              <a href="https://eznp.github.io/tags/LFI/" class="text-hacker-color3 hover:bg-hacker-hover-color hover:text-white block border border-hacker-color3 hover:border-dotted rounded-sm py-0.5 px-2 mr-4 mb-2">
+                LFI <sub>1</sub>
+              </a>
+              <br />
+            
+              <a href="https://eznp.github.io/tags/RCE/" class="text-hacker-color3 hover:bg-hacker-hover-color hover:text-white block border border-hacker-color3 hover:border-dotted rounded-sm py-0.5 px-2 mr-4 mb-2">
+                RCE <sub>1</sub>
+              </a>
+              <br />
+            
+              <a href="https://eznp.github.io/tags/xxe/" class="text-hacker-color3 hover:bg-hacker-hover-color hover:text-white block border border-hacker-color3 hover:border-dotted rounded-sm py-0.5 px-2 mr-4 mb-2">
+                -xxe <sub>1</sub>
+              </a>
+              <br />
+            
+              <a href="https://eznp.github.io/tags/php反序列化-session反序列化-phar反序列化-php-pop链-php字符串逃逸/" class="text-hacker-color3 hover:bg-hacker-hover-color hover:text-white block border border-hacker-color3 hover:border-dotted rounded-sm py-0.5 px-2 mr-4 mb-2">
+                -php反序列化 -session反序列化 -phar反序列化 -php pop链 -php字符串逃逸 <sub>1</sub>
+              </a>
+              <br />
+            
+              <a href="https://eznp.github.io/tags/web-ciscn-ccb/" class="text-hacker-color3 hover:bg-hacker-hover-color hover:text-white block border border-hacker-color3 hover:border-dotted rounded-sm py-0.5 px-2 mr-4 mb-2">
+                -web -ciscn&amp;ccb <sub>1</sub>
+              </a>
+              <br />
+            
+              <a href="https://eznp.github.io/tags/http走私/" class="text-hacker-color3 hover:bg-hacker-hover-color hover:text-white block border border-hacker-color3 hover:border-dotted rounded-sm py-0.5 px-2 mr-4 mb-2">
+                http走私 <sub>1</sub>
+              </a>
+              <br />
+            
+            
+          </div>
+          <hr class="w-full border-t-2 border-line-color border-dashed">
+        
+  
+        
+  
+      
+        
+  
+        
+  
+        
+  
+        
+  
+        
+          <!-- 链接部分 -->
+          <h3 class="text-hacker-color1 font-bold text-lg">Links</h3>
+          <div>
+            
+              <a href="https://www.baidu.com" target="_blank" class="text-hacker-color3 hover:text-white">
+                Baidu
+              </a>
+              <br />
+            
+          </div>
+          <hr class="w-full border-t-2 border-line-color border-dashed">
+        
+  
+      
+    </div>
+  
+  
+  
+  
+  
+
+
+
+
+
+
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+<script>Prism.highlightAll();</script>
+
+
+<footer class="bg-black text-gray-400 py-4">
+    <div class="container mx-auto text-center">
+      <p>© <span id="current-year"></span>  Zer0 
+        <br> Powered by <a class="hover:text-white duration-150 hover:underline decoration-slice" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a class="hover:text-white duration-150 hover:underline decoration-slice" target="_blank" rel="noopener" href="https://github.com/m310ct/hexo-theme-hexploit">Hexpolit</a></p>
+    </div>
+  </footer>
+  
+  <script> 
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+  
+
+</body>
+<script src="./js/scroll.js"></script>
+
+</html>
