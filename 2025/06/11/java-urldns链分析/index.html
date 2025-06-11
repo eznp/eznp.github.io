@@ -19,20 +19,20 @@
   <meta name="author" content="Zer0">
   <meta name="keywords" content="">
   
-    <meta name="description" content="URLDNS链分析这个链子可以用来判断是否有反序列化漏洞，其本身没有什么攻击性，也比较简单，就是进行一次DNS请求。 原理java.util.HashMap 重写了 readObject, 在反序列化时会调用 hash 函数计算 key 的 hashCode.而 java.net.URL 的 hashCode 在计算时会调用 getHostAddress 来解析域名, 从而发出 DNS 请求. h">
+    <meta name="description" content="URLDNS链分析这个链子可以用来判断是否有反序列化漏洞，其本身没有什么攻击性，就是进行一次DNS请求。 原理java.util.HashMap 重写了 readObject, 在反序列化时会调用 hash 函数计算 key 的 hashCode.而 java.net.URL 的 hashCode 在计算时会调用 getHostAddress 来解析域名, 从而发出 DNS 请求. hashcod">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java-urldns链分析">
-<meta property="og:url" content="https://eznp.github.io/2025/06/09/java-urldns%E9%93%BE%E5%88%86%E6%9E%90/index.html">
+<meta property="og:url" content="https://eznp.github.io/2025/06/11/java-urldns%E9%93%BE%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="Zer0">
-<meta property="og:description" content="URLDNS链分析这个链子可以用来判断是否有反序列化漏洞，其本身没有什么攻击性，也比较简单，就是进行一次DNS请求。 原理java.util.HashMap 重写了 readObject, 在反序列化时会调用 hash 函数计算 key 的 hashCode.而 java.net.URL 的 hashCode 在计算时会调用 getHostAddress 来解析域名, 从而发出 DNS 请求. h">
+<meta property="og:description" content="URLDNS链分析这个链子可以用来判断是否有反序列化漏洞，其本身没有什么攻击性，就是进行一次DNS请求。 原理java.util.HashMap 重写了 readObject, 在反序列化时会调用 hash 函数计算 key 的 hashCode.而 java.net.URL 的 hashCode 在计算时会调用 getHostAddress 来解析域名, 从而发出 DNS 请求. hashcod">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202505301736401.png">
 <meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202505301736475.png">
 <meta property="og:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202505301736312.png">
-<meta property="article:published_time" content="2025-06-09T08:34:35.000Z">
-<meta property="article:modified_time" content="2025-06-09T08:35:32.563Z">
+<meta property="article:published_time" content="2025-06-11T09:46:26.000Z">
+<meta property="article:modified_time" content="2025-06-11T09:48:01.538Z">
 <meta property="article:author" content="Zer0">
-<meta property="article:tag" content="-java安全">
+<meta property="article:tag" content="-java">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kingofyou.oss-cn-beijing.aliyuncs.com/D:%5CBolg%5Chexo-blog%5Csource%5C_posts%5C%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0202505301736401.png">
   
@@ -216,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-09 16:34" pubdate>
-          2025年6月9日 下午
+        <time datetime="2025-06-11 17:46" pubdate>
+          2025年6月11日 下午
         </time>
       </span>
     
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1.3k 字
         
       </span>
     
@@ -281,7 +281,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="URLDNS链分析"><a href="#URLDNS链分析" class="headerlink" title="URLDNS链分析"></a>URLDNS链分析</h1><p>这个链子可以用来判断是否有反序列化漏洞，其本身没有什么攻击性，也比较简单，就是进行一次DNS请求。</p>
+                <h1 id="URLDNS链分析"><a href="#URLDNS链分析" class="headerlink" title="URLDNS链分析"></a>URLDNS链分析</h1><p>这个链子可以用来判断是否有反序列化漏洞，其本身没有什么攻击性，就是进行一次DNS请求。</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><code>java.util.HashMap</code> 重写了 <code>readObject</code>, 在反序列化时会调用 <code>hash</code> 函数计算 key 的 hashCode.而 <code>java.net.URL</code> 的 hashCode 在计算时会调用 <code>getHostAddress</code> 来解析域名, 从而发出 DNS 请求.</p>
 <h2 id="hashcode-方法"><a href="#hashcode-方法" class="headerlink" title="hashcode()方法"></a><code>hashcode()</code>方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.net.URL;<br><span class="hljs-keyword">import</span> java.util.HashMap;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">urldns</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        HashMap&lt;URL, String&gt; hashMap = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;URL, String&gt;();<br>        <span class="hljs-type">URL</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">URL</span>(<span class="hljs-string">&quot;https://nf2p2x19.requestrepo.com/&quot;</span>);<br>        url.hashCode();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -354,7 +354,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/java%E5%AE%89%E5%85%A8/" class="print-no-link">#-java安全</a>
+        <a href="/tags/java/" class="print-no-link">#-java</a>
       
     </div>
   
@@ -367,7 +367,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>java-urldns链分析</div>
-      <div>https://eznp.github.io/2025/06/09/java-urldns链分析/</div>
+      <div>https://eznp.github.io/2025/06/11/java-urldns链分析/</div>
     </div>
     <div class="license-meta">
       
@@ -379,7 +379,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年6月9日</div>
+          <div>2025年6月11日</div>
         </div>
       
       
